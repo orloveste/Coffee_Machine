@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Coffee_Machine.iml" filepath="$PROJECT_DIR$/.idea/modules/Coffee_Machine.iml" group="Coffee_Machine" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Coffee Machine/task/Coffee_Machine-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Coffee Machine/task/Coffee_Machine-task.iml" group="Coffee_Machine/Coffee_Machine-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Coffee Machine/task/Coffee_Machine-task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Coffee Machine/task/Coffee_Machine-task_main.iml" group="Coffee_Machine/Coffee_Machine-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Coffee Machine/task/Coffee_Machine-task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Coffee Machine/task/Coffee_Machine-task_test.iml" group="Coffee_Machine/Coffee_Machine-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Grades/Problems-Grades.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Grades/Problems-Grades.iml" group="Coffee_Machine/Problems-Grades" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Grades/Problems-Grades_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Grades/Problems-Grades_main.iml" group="Coffee_Machine/Problems-Grades" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Grades/Problems-Grades_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Grades/Problems-Grades_test.iml" group="Coffee_Machine/Problems-Grades" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Next even number/Problems-Next_even_number.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Next even number/Problems-Next_even_number.iml" group="Coffee_Machine/Problems-Next_even_number" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Next even number/Problems-Next_even_number_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Next even number/Problems-Next_even_number_main.iml" group="Coffee_Machine/Problems-Next_even_number" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Next even number/Problems-Next_even_number_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Next even number/Problems-Next_even_number_test.iml" group="Coffee_Machine/Problems-Next_even_number" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The smallest value/Problems-The_smallest_value.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The smallest value/Problems-The_smallest_value.iml" group="Coffee_Machine/Problems-The_smallest_value" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The smallest value/Problems-The_smallest_value_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The smallest value/Problems-The_smallest_value_main.iml" group="Coffee_Machine/Problems-The_smallest_value" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The smallest value/Problems-The_smallest_value_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The smallest value/Problems-The_smallest_value_test.iml" group="Coffee_Machine/Problems-The_smallest_value" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="Coffee_Machine/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="Coffee_Machine/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="Coffee_Machine/util" />
+    </modules>
+  </component>
+</project>
