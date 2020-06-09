@@ -3,8 +3,36 @@ package machine;
 import java.util.Scanner;
 
 public class CoffeeMachine {
-    public static int amountOfCoffeeFromInventory(int waterInventory, int milkInventory,
+    private static int disposableCup = 0;
+
+    public static void espresso() {
+        int waterRecipe = 0; // ml
+        int milkRecipe = 0; // ml
+        int coffeeBeansRecipe = 0; // g;
+    }
+    public static void latte() {
+        int waterRecipe = 0; // ml
+        int milkRecipe = 0; // ml
+        int coffeeBeansRecipe = 0; // g;
+    }
+    public static void cappuccino() {
+        int waterRecipe = 0; // ml
+        int milkRecipe = 0; // ml
+        int coffeeBeansRecipe = 0; // g
+    }
+    public static int disposableCup() {
+        return disposableCup++;
+    }
+
+    public static void refill(){
+    }
+
+    public static void takeMoney(){
+    }
+
+    /*public static int amountOfCoffeeFromInventory(int waterInventory, int milkInventory,
                                                       int coffeeInventory) {
+        //stage 3/6
         int waterRecipe = 200; // ml
         int milkRecipe = 50; // ml
         int coffeeBeansRecipe = 15; // g
@@ -15,10 +43,44 @@ public class CoffeeMachine {
 
         int min = Math.min(w, m);
         return Math.min(min, c);
-    }
+    }*/
 
     public static void main(String[] args) {
+        //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
+        String buy;
+        String fill;
+        String take;
+
+
+        System.out.println("Enter Command:  \"buy\", \"fill\", \"take\"");
+        String input = reader.nextLine();
+        switch (input) {
+            case "buy" :
+                System.out.println("buy - choose: espresso ->(press 1), latte ->(press 2), or cappuccino ->(press 3).");
+                int readChooseCoffe =  reader.nextInt();
+                //todo next
+                break;
+            case "fill" :
+                System.out.println("fill");
+                break;
+            case "take" :
+                System.out.println("take");
+                break;
+            default:
+                System.out.println("not accepted command");
+        }
+
+
+
+
+    }
+}
+
+ /*
+ //stage 3/6 runner
+
+ Scanner reader = new Scanner(System.in);
 
         System.out.println("Write how many ml of water the coffee machine has:");
         int waterInventory = reader.nextInt();
@@ -38,6 +100,4 @@ public class CoffeeMachine {
         } else {
             System.out.println("Yes, I can make that amount of coffee (and even " +
                     (minimumAmountOfCoffee - amountOfCoffee) + " more than that)");
-        }
-    }
-}
+        }*/
