@@ -24,7 +24,7 @@ public class CoffeeMachine {
         int cost = 6;
     }
     public static int disposableCup() {
-        return disposableCup++;
+        return disposableCup--;
     }
 
     public static void refill(){
@@ -72,9 +72,21 @@ public class CoffeeMachine {
                     cappuccino();
                     System.out.println("execute cappuccino");
                 }
-
                 break;
             case "fill" :
+                System.out.println("Write how many ml of water do you want to add:");
+                int addWater = reader.nextInt();
+                System.out.println(addWater);
+                System.out.println("Write how many ml of milk do you want to add:");
+                int addMilk = reader.nextInt();
+                System.out.println(addMilk);
+                System.out.println("Write how many grams of coffee beans do you want to add:");
+                int addCoffee = reader.nextInt();
+                System.out.println(addCoffee);
+                System.out.println("how many disposable cups do you want to add:");
+                int addDisposableCups = reader.nextInt();
+                System.out.println(addDisposableCups);
+
                 System.out.println("fill");
                 break;
             case "take" :
