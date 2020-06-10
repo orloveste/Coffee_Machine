@@ -24,9 +24,9 @@ public class CoffeeMachine {
         int coffeeBeansRecipe = 12; // g
         int cost = 6;
     }
-    public static int disposableCup(int i) {
-        return disposableCup--;
+    public static void disposableCup(int i) {
     }
+
     public static void buy() { //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
         System.out.println("buy - choose: espresso ->(press 1), latte ->(press 2), or cappuccino ->(press 3).");
@@ -59,10 +59,29 @@ public class CoffeeMachine {
     }
 
     public static void take() { //Stage 4/6: Action!
-        int moneyFromCoffeeMachine = 550;
+        int moneyFromCoffeeMachine = 0;
         System.out.println("Bani disponibili in aparat: " + moneyFromCoffeeMachine);
     }
+    public static void coffeeMachineStock() { //Work on project. Stage 4/6: Action! Description: step 5
+        moneyStock (550); //$
+        waterStock (400); //ml
+        milkStock (540); //ml
+        coffeeBeansStock (120); //g
+        disposableCup(9); //pieces
+    }
 
+    private static void coffeeBeansStock(int i) { //Work on project. Stage 4/6: Action! Description: step 5
+
+    }
+
+    private static void milkStock(int i) { //Work on project. Stage 4/6: Action! Description: step 5
+    }
+
+    private static void waterStock(int i) { //Work on project. Stage 4/6: Action! Description: step 5
+    }
+
+    private static void moneyStock(int i) { //Work on project. Stage 4/6: Action! Description: step 5
+    }
     /*public static int amountOfCoffeeFromInventory(int waterInventory, int milkInventory,
                                                       int coffeeInventory) {
         //stage 3/6
@@ -80,6 +99,8 @@ public class CoffeeMachine {
 
     public static void main(String[] args) {
         //Stage 4/6: Action!
+
+        coffeeMachineStock();
         Scanner reader = new Scanner(System.in);
 
         System.out.println("Enter Command:  \"buy\", \"fill\", \"take\"");
