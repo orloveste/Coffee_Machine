@@ -6,19 +6,22 @@ public class CoffeeMachine {
     private static int disposableCup = 0;
 
     public static void espresso() {
-        int waterRecipe = 0; // ml
+        int waterRecipe = 250; // ml
         int milkRecipe = 0; // ml
-        int coffeeBeansRecipe = 0; // g;
+        int coffeeBeansRecipe = 16; // g;
+        int cost = 4;
     }
     public static void latte() {
-        int waterRecipe = 0; // ml
-        int milkRecipe = 0; // ml
-        int coffeeBeansRecipe = 0; // g;
+        int waterRecipe = 350; // ml
+        int milkRecipe = 75; // ml
+        int coffeeBeansRecipe = 20; // g;
+        int cost = 7;
     }
     public static void cappuccino() {
-        int waterRecipe = 0; // ml
-        int milkRecipe = 0; // ml
-        int coffeeBeansRecipe = 0; // g
+        int waterRecipe = 200; // ml
+        int milkRecipe = 100; // ml
+        int coffeeBeansRecipe = 12; // g
+        int cost = 6;
     }
     public static int disposableCup() {
         return disposableCup++;
@@ -59,7 +62,17 @@ public class CoffeeMachine {
             case "buy" :
                 System.out.println("buy - choose: espresso ->(press 1), latte ->(press 2), or cappuccino ->(press 3).");
                 int readChooseCoffe =  reader.nextInt();
-                //todo next
+                if (readChooseCoffe == 1) {
+                    espresso();
+                    System.out.println("execute espresso");
+                } else if (readChooseCoffe == 2) {
+                    latte();
+                    System.out.println("execute latte");
+                } else if (readChooseCoffe == 3) {
+                    cappuccino();
+                    System.out.println("execute cappuccino");
+                }
+
                 break;
             case "fill" :
                 System.out.println("fill");
