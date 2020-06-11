@@ -34,8 +34,6 @@ public class CoffeeMachine {
         CoffeeMachine.disposableCup--;
         CoffeeMachine.moneyStock = moneyStock + cost;
     }
-
-
     public static void buy() { //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
         System.out.print("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:\n> ");
