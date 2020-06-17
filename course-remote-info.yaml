@@ -98,10 +98,10 @@ topics:
     theory_id: 3614
   - title: Primitive and reference types
     theory_id: 5035
-  - title: Final variables
-    theory_id: 7427
   - title: Array
     theory_id: 3511
+  - title: Final variables
+    theory_id: 7427
   - title: Iterating over arrays
     theory_id: 3602
   - title: Defining classes
