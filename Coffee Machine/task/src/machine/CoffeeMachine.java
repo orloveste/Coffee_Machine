@@ -3,8 +3,8 @@ package machine;
 import java.util.Scanner;
 
 public class CoffeeMachine {
-
-    private static int disposableCup = 9; //Stage 4/6: Action!
+    //Stage 4/6: Action!
+    private static int disposableCup = 9;
     private static int moneyStock = 550;
     private static int milkStock = 540;
     private static int waterStock = 400;
@@ -57,7 +57,6 @@ public class CoffeeMachine {
             cappuccinoRecipe();
         }
     }
-
     public static void fill(){ //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
         System.out.print("Write how many ml of water do you want to add:\n> ");
@@ -75,31 +74,12 @@ public class CoffeeMachine {
         System.out.print("how many disposable cups do you want to add:\n> ");
         int addDisposableCups = reader.nextInt();
         CoffeeMachine.disposableCup += addDisposableCups;
-
     }
-
     public static void take() { //Stage 4/6: Action!
-        int moneyFromCoffeeMachine = 0;
-        System.out.println("Bani disponibili in aparat: " + moneyFromCoffeeMachine);
+        int moneyFromCoffeeMachine = moneyStock;
+        moneyStock -= moneyFromCoffeeMachine;
+        System.out.println("I gave you $" + moneyFromCoffeeMachine);
     }
-    public static void coffeeMachineStock() { //Work on project. Stage 4/6: Action! Description: step 6
-
-    }
-    /*public static int amountOfCoffeeFromInventory(int waterInventory, int milkInventory,
-                                                      int coffeeInventory) {
-        //stage 3/6
-        int waterRecipe = 200; // ml
-        int milkRecipe = 50; // ml
-        int coffeeBeansRecipe = 15; // g
-
-        int w = waterInventory / waterRecipe;
-        int m = milkInventory / milkRecipe;
-        int c = coffeeInventory / coffeeBeansRecipe;
-
-        int min = Math.min(w, m);
-        return Math.min(min, c);
-    }*/
-
     public static void hello() { //Work on project. Stage 4/6: Action!
         System.out.println("The coffee machine has:\n" +
                 waterStock + " of water\n" +
