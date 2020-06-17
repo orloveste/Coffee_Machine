@@ -4,52 +4,56 @@ import java.util.Scanner;
 
 public class CoffeeMachine {
     //Stage 4/6: Action!
-    private static int disposableCup = 9; // piece
-    private static int moneyStock = 550; // $
-    private static int milkStock = 540; // ml
-    private static int waterStock = 400; // ml
-    private static int coffeeBeansStock = 120; // g
+    private static int disposableCup = 9;
+    private static int moneyStock = 550;
+    private static int milkStock = 540;
+    private static int waterStock = 400;
+    private static int coffeeBeansStock = 120;
 
     public static void espressoRecipe() { //Stage 4/6: Action!
         int waterRecipe = 250; // ml
         int milkRecipe = 0; // ml
         int coffeeBeansRecipe = 16; // g;
-        int cost = 4; // $
-
-        CoffeeMachine.waterStock = waterStock - waterRecipe;
-        CoffeeMachine.coffeeBeansStock = coffeeBeansStock - coffeeBeansRecipe;
-        CoffeeMachine.disposableCup--;
-        CoffeeMachine.moneyStock = moneyStock + cost;
+        int cost = 4;
+        checkStock(waterRecipe, milkRecipe, coffeeBeansRecipe, cost);
     }
     public static void latteRecipe() { //Stage 4/6: Action!
         int waterRecipe = 350; // ml
         int milkRecipe = 75; // ml
         int coffeeBeansRecipe = 20; // g;
-        int cost = 7; // $
-
-        CoffeeMachine.waterStock = waterStock - waterRecipe;
-        CoffeeMachine.milkStock = milkStock - milkRecipe;
-        CoffeeMachine.coffeeBeansStock = coffeeBeansStock - coffeeBeansRecipe;
-        CoffeeMachine.disposableCup--;
-        CoffeeMachine.moneyStock = moneyStock + cost;
+        int cost = 7;
+        checkStock(waterRecipe, milkRecipe, coffeeBeansRecipe, cost);
     }
     public static void cappuccinoRecipe() { //Stage 4/6: Action!
         int waterRecipe = 200; // ml
         int milkRecipe = 100; // ml
         int coffeeBeansRecipe = 12; // g
         int cost = 6;
-
-        CoffeeMachine.waterStock = waterStock - waterRecipe;
-        CoffeeMachine.milkStock = milkStock - milkRecipe;
-        CoffeeMachine.coffeeBeansStock = coffeeBeansStock - coffeeBeansRecipe;
-        CoffeeMachine.disposableCup--;
-        CoffeeMachine.moneyStock = moneyStock + cost;
+        checkStock(waterRecipe, milkRecipe, coffeeBeansRecipe, cost);
+    }
+    private static void checkStock(int waterRecipe, int milkRecipe, int coffeeBeansRecipe, int cost) {
+        if (waterStock >= waterRecipe && milkStock >= milkRecipe && /*Stage #5: On a coffee loop*/
+                coffeeBeansStock >= coffeeBeansRecipe && disposableCup > 0) {
+            System.out.println("I have enough resources, making you a coffee!");
+            CoffeeMachine.waterStock -= waterRecipe;
+            CoffeeMachine.milkStock -= milkRecipe;
+            CoffeeMachine.coffeeBeansStock -= coffeeBeansRecipe;
+            CoffeeMachine.disposableCup--;
+            CoffeeMachine.moneyStock += cost;
+        } else if (waterRecipe > waterStock) {
+            System.out.println("Sorry, not enough water!");
+        } else if (milkRecipe > milkStock) {
+            System.out.println("Sorry, not enough milk!");
+        } else if (coffeeBeansRecipe > coffeeBeansStock) {
+            System.out.println("Sorry, not enough coffee beans!");
+        } else if (disposableCup == 0) {
+            System.out.println("Sorry, not enough cup's!");
+        }
     }
     public static void buy() { //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
-        System.out.print("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, " +
-                "back - to main menu:\n> ");
-        String readChooseCoffee = reader.nextLine();
+        System.out.print("\nWhat do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:\n> ");
+        String readChooseCoffee =  reader.next();
         switch (readChooseCoffee) {
             case "1":
                 espressoRecipe();
@@ -61,7 +65,7 @@ public class CoffeeMachine {
                 cappuccinoRecipe();
                 break;
             case "back":
-                command();
+                hello();
                 break;
         }
     }
@@ -79,7 +83,7 @@ public class CoffeeMachine {
         int addCoffee = reader.nextInt();
         CoffeeMachine.coffeeBeansStock += addCoffee;
 
-        System.out.print("how many disposable cups do you want to add:\n> ");
+        System.out.print("Write how many disposable cups do you want to add:\n> ");
         int addDisposableCups = reader.nextInt();
         CoffeeMachine.disposableCup += addDisposableCups;
     }
@@ -88,13 +92,13 @@ public class CoffeeMachine {
         moneyStock -= moneyFromCoffeeMachine;
         System.out.println("I gave you $" + moneyFromCoffeeMachine);
     }
-    public static void remainingStock() { //Work on project. Stage 4/6: Action!
-        System.out.println("The coffee machine has:\n" +
+    public static void hello() { //Work on project. Stage 4/6: Action!
+        System.out.println("\nThe coffee machine has:\n" +
                 waterStock + " of water\n" +
                 milkStock + " of milk\n" +
                 coffeeBeansStock + " of coffee beans\n" +
                 disposableCup + " of disposable cups\n" +
-                moneyStock + " of money\n");
+                moneyStock + " of money");
     }
     private static void command() { //Work on project. Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
@@ -112,31 +116,21 @@ public class CoffeeMachine {
                     take();
                     break;
                 case "remaining" :
-                    remainingStock();
+                    hello();
                     break;
                 case "exit" :
                     break;
-                default:
-                    System.out.print("Write action (buy, fill, take, remaining, exit):\n> ");
-                    reader.next();
             }
-            System.out.print("Write action (buy, fill, take, remaining, exit):\n> ");
+            System.out.print("\nWrite action (buy, fill, take, remaining, exit):\n> ");
             input = reader.next();
         }
 
     }
-    public static void goodBye() { //Work on project. Stage 4/6: Action!
-        System.out.println("\nThe coffee machine has:\n" +
-                waterStock + " of water\n" +
-                milkStock + " of milk\n" +
-                coffeeBeansStock + " of coffee beans\n" +
-                disposableCup + " of disposable cups\n" +
-                moneyStock + " of money\n");
-    }
 
     public static void main(String[] args) {
-        //Work on project. Stage 5/6: On a coffee loop
+        //Stage #5: On a coffee loop
         command();
+
     }
 }
 
