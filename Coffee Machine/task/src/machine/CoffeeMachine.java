@@ -65,7 +65,7 @@ public class CoffeeMachine {
                 cappuccinoRecipe();
                 break;
             case "back":
-                hello();
+                command();
                 break;
         }
     }
@@ -104,7 +104,7 @@ public class CoffeeMachine {
         Scanner reader = new Scanner(System.in);
         System.out.print("Write action (buy, fill, take, remaining, exit):\n> ");
         String input = reader.next();
-        while (!input.toLowerCase().equals("exit")) {
+        while (!"exit".equals(input.toLowerCase())) {
             switch (input) {
                 case "buy" :
                     buy();
@@ -133,6 +133,51 @@ public class CoffeeMachine {
 
     }
 }
+
+// Exception in test #7  Probably your program run out of input (Scanner tried to read 
+// more than expected).  java.util.NoSuchElementException at 
+// java.base/java.util.Scanner.throwFor(Scanner.java:937) at 
+// java.base/java.util.Scanner.next(Scanner.java:1478) at 
+// machine.CoffeeMachine.command(CoffeeMachine.java:144) at 
+// machine.CoffeeMachine.main(CoffeeMachine.java:151)  Please find below the output...
+//Start test 7
+//Write action (buy, fill, take, remaining, exit):
+//> > remaining
+//
+//The coffee machine has:
+//400 of water
+//540 of milk
+//120 of coffee beans
+//9 of disposable cups
+//550 of money
+//
+//Write action (buy, fill, take, remaining, exit):
+//> > buy
+//
+//What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:
+//> > back
+//Write action (buy, fill, take, remaining, exit):
+//> > remaining
+//
+//The coffee machine has:
+//400 of water
+//540 of milk
+//120 of coffee beans
+//9 of disposable cups
+//550 of money
+//
+//Write action (buy, fill, take, remaining, exit):
+//> > exit
+//
+//Write action (buy, fill, take, remaining, exit):
+//>
+
+//Wrong answer in test #7
+// There should be two lines with "milk", found: 3  Please find below the 
+// output of your program during this failed test. Note that the '>' character indicates the 
+// beginning of the input line.  ---  Write action (buy, fill, take, remaining, exit):
+// > > remaining
+// The coffee machine has: 400 of water 540 of milk 120 of coffee beans 9 of disposable cup...
 
  /*
  //stage 3/6 runner
