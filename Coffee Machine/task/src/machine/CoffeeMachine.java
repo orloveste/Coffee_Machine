@@ -10,17 +10,28 @@ public class CoffeeMachine {
     private static int waterStock = 400;
     private static int coffeeBeansStock = 120;
 
-    public static void espresso() { //Stage 4/6: Action!
+    public static void espressoRecipe() { //Stage 4/6: Action!
         int waterRecipe = 250; // ml
         int milkRecipe = 0; // ml
         int coffeeBeansRecipe = 16; // g;
         int cost = 4;
+
+        CoffeeMachine.waterStock = waterStock - waterRecipe;
+        CoffeeMachine.coffeeBeansStock = coffeeBeansStock - coffeeBeansRecipe;
+        CoffeeMachine.disposableCup--;
+        CoffeeMachine.moneyStock = moneyStock + cost;
     }
-    public static void latte() { //Stage 4/6: Action!
+    public static void latteRecipe() { //Stage 4/6: Action!
         int waterRecipe = 350; // ml
         int milkRecipe = 75; // ml
         int coffeeBeansRecipe = 20; // g;
         int cost = 7;
+
+        CoffeeMachine.waterStock = waterStock - waterRecipe;
+        CoffeeMachine.milkStock = milkStock - milkRecipe;
+        CoffeeMachine.coffeeBeansStock = coffeeBeansStock - coffeeBeansRecipe;
+        CoffeeMachine.disposableCup--;
+        CoffeeMachine.moneyStock = moneyStock + cost;
     }
     public static void cappuccinoRecipe() { //Stage 4/6: Action!
         int waterRecipe = 200; // ml
@@ -37,32 +48,34 @@ public class CoffeeMachine {
     public static void buy() { //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
         System.out.print("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:\n> ");
-        int readChooseCoffe =  reader.nextInt();
-        if (readChooseCoffe == 1) {
-            espresso();
-            System.out.println("execute espresso - buy");
-        } else if (readChooseCoffe == 2) {
-            latte();
-            System.out.println("execute latte - buy");
-        } else if (readChooseCoffe == 3) {
+        int readChooseCoffee =  reader.nextInt();
+        if (readChooseCoffee == 1) {
+            espressoRecipe();
+        } else if (readChooseCoffee == 2) {
+            latteRecipe();
+        } else if (readChooseCoffee == 3) {
             cappuccinoRecipe();
         }
     }
 
     public static void fill(){ //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
-        System.out.println("Write how many ml of water do you want to add:");
+        System.out.print("Write how many ml of water do you want to add:\n> ");
         int addWater = reader.nextInt();
-        System.out.println(addWater);
-        System.out.println("Write how many ml of milk do you want to add:");
+        CoffeeMachine.waterStock += addWater;
+
+        System.out.print("Write how many ml of milk do you want to add:\n> ");
         int addMilk = reader.nextInt();
-        System.out.println(addMilk);
-        System.out.println("Write how many grams of coffee beans do you want to add:");
+        CoffeeMachine.milkStock += addMilk;
+
+        System.out.print("Write how many grams of coffee beans do you want to add:\n> ");
         int addCoffee = reader.nextInt();
-        System.out.println(addCoffee);
-        System.out.println("how many disposable cups do you want to add:");
+        CoffeeMachine.coffeeBeansStock += addCoffee;
+
+        System.out.print("how many disposable cups do you want to add:\n> ");
         int addDisposableCups = reader.nextInt();
-        System.out.println(addDisposableCups);
+        CoffeeMachine.disposableCup += addDisposableCups;
+
     }
 
     public static void take() { //Stage 4/6: Action!
