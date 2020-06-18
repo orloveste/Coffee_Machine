@@ -102,29 +102,26 @@ public class CoffeeMachine {
     }
     private static void command() { //Work on project. Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
+        System.out.print("Write action (buy, fill, take, remaining, exit):\n> ");
+        String input = reader.next();
 
-        String input;
-        do {
-            System.out.print("\nWrite action (buy, fill, take, remaining, exit):\n> ");
-            input = reader.next();
-            switch (input) {
-                case "buy":
-                    buy();
-                    break;
-                case "fill":
-                    fill();
-                    break;
-                case "take":
-                    take();
-                    break;
-                case "remaining":
-                    hello();
-                    break;
-                case "exit":
-                    System.exit(0);
-                    break;
-            }
-        }while (true) ;
+        switch (input) {
+            case "buy" :
+                buy();
+                break;
+            case "fill" :
+                fill();
+                break;
+            case "take" :
+                take();
+                break;
+            case "remaining" :
+                hello();
+                break;
+            case "exit" :
+                break;
+
+        }
 
     }
 
