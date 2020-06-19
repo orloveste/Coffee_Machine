@@ -12,9 +12,22 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Coffee Machine/task" />
+            <option value="$PROJECT_DIR$/Problems/A simple calculator" />
+            <option value="$PROJECT_DIR$/Problems/Check a number is positive" />
+            <option value="$PROJECT_DIR$/Problems/Exactly one parameter is positive" />
+            <option value="$PROJECT_DIR$/Problems/From string to a number" />
             <option value="$PROJECT_DIR$/Problems/Grades" />
+            <option value="$PROJECT_DIR$/Problems/Harry Potter" />
+            <option value="$PROJECT_DIR$/Problems/Maximum element divisible by four" />
             <option value="$PROJECT_DIR$/Problems/Next even number" />
+            <option value="$PROJECT_DIR$/Problems/Shape" />
+            <option value="$PROJECT_DIR$/Problems/Size of parts" />
+            <option value="$PROJECT_DIR$/Problems/The army of units" />
+            <option value="$PROJECT_DIR$/Problems/The length of the sequence" />
+            <option value="$PROJECT_DIR$/Problems/The number of tens" />
+            <option value="$PROJECT_DIR$/Problems/The sequence" />
             <option value="$PROJECT_DIR$/Problems/The smallest value" />
+            <option value="$PROJECT_DIR$/Problems/Vowel or not" />
             <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
