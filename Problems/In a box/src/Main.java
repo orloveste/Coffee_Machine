@@ -4,9 +4,9 @@ class Box {
     double width;
     double length;
 
-     double getVolume() {
-         return this.height * this.width * this.length;
-     }
+    double getVolume() {
+        return this.height * this.width * this.length;
+    }
 
     /*public static void main(String[] args) {
         Box box = new Box();
