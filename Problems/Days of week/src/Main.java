@@ -2,6 +2,17 @@
 
 import java.time.DayOfWeek;
 
+//import java.time.DayOfWeek;
+enum DaysOfWeek { //why not working
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+}
+
 public class Main {
     public static void main(String[] args) {
         for (DayOfWeek day : DayOfWeek.values()) {
