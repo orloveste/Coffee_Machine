@@ -14,6 +14,8 @@ class Car {
     void brake() {
         if (this.speed >= 5) {
             setSpeed(this.speed - 5);
+        } else {
+            setSpeed(this.speed = 0);
         }
     }
 
