@@ -15,13 +15,33 @@ public class CoffeeMachine {
         int milkRecipe = 0; // ml
         int coffeeBeansRecipe = 16; // g;
         int cost = 4;
+
         checkStock(waterRecipe, milkRecipe, coffeeBeansRecipe, cost);
     }
+
+    private static void checkStock(int waterRecipe, int milkRecipe, int coffeeBeansRecipe, int cost) {
+        if (waterRecipe > waterStock) {
+            System.out.println("Sorry, not enough water!");
+        } else if (milkRecipe > milkStock) {
+            System.out.println("Sorry, not enough milk!");
+        } else if (coffeeBeansRecipe > coffeeBeansStock) {
+            System.out.println("Sorry, not enough coffee beans!");
+        }else {
+            System.out.println("I have enough resources, making you a coffee!");
+            CoffeeMachine.waterStock = waterStock - waterRecipe;
+            CoffeeMachine.milkStock = milkStock - milkRecipe;
+            CoffeeMachine.coffeeBeansStock = coffeeBeansStock - coffeeBeansRecipe;
+            CoffeeMachine.disposableCup--;
+            CoffeeMachine.moneyStock = moneyStock + cost;
+        }
+    }
+
     public static void latteRecipe() { //Stage 4/6: Action!
         int waterRecipe = 350; // ml
         int milkRecipe = 75; // ml
         int coffeeBeansRecipe = 20; // g;
         int cost = 7;
+
         checkStock(waterRecipe, milkRecipe, coffeeBeansRecipe, cost);
     }
     public static void cappuccinoRecipe() { //Stage 4/6: Action!
@@ -29,31 +49,14 @@ public class CoffeeMachine {
         int milkRecipe = 100; // ml
         int coffeeBeansRecipe = 12; // g
         int cost = 6;
+
         checkStock(waterRecipe, milkRecipe, coffeeBeansRecipe, cost);
-    }
-    private static void checkStock(int waterRecipe, int milkRecipe, int coffeeBeansRecipe, int cost) {
-        if (waterStock >= waterRecipe && milkStock >= milkRecipe && /*Stage #5: On a coffee loop*/
-                coffeeBeansStock >= coffeeBeansRecipe && disposableCup > 0) {
-            System.out.println("I have enough resources, making you a coffee!");
-            CoffeeMachine.waterStock -= waterRecipe;
-            CoffeeMachine.milkStock -= milkRecipe;
-            CoffeeMachine.coffeeBeansStock -= coffeeBeansRecipe;
-            CoffeeMachine.disposableCup--;
-            CoffeeMachine.moneyStock += cost;
-        } else if (waterRecipe > waterStock) {
-            System.out.println("Sorry, not enough water!");
-        } else if (milkRecipe > milkStock) {
-            System.out.println("Sorry, not enough milk!");
-        } else if (coffeeBeansRecipe > coffeeBeansStock) {
-            System.out.println("Sorry, not enough coffee beans!");
-        } else if (disposableCup == 0) {
-            System.out.println("Sorry, not enough cup's!");
-        }
     }
     public static void buy() { //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
         System.out.print("\nWhat do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:\n> ");
-        String readChooseCoffee =  reader.next();
+
+        String readChooseCoffee = reader.nextLine();
         switch (readChooseCoffee) {
             case "1":
                 espressoRecipe();
@@ -71,20 +74,20 @@ public class CoffeeMachine {
     }
     public static void fill(){ //Stage 4/6: Action!
         Scanner reader = new Scanner(System.in);
-        System.out.print("Write how many ml of water do you want to add:\n> ");
-        int addWater = reader.nextInt();
+        System.out.print("\nWrite how many ml of water do you want to add:\n> ");
+        int addWater = Integer.parseInt(reader.nextLine());
         CoffeeMachine.waterStock += addWater;
 
         System.out.print("Write how many ml of milk do you want to add:\n> ");
-        int addMilk = reader.nextInt();
+        int addMilk = Integer.parseInt(reader.nextLine());
         CoffeeMachine.milkStock += addMilk;
 
         System.out.print("Write how many grams of coffee beans do you want to add:\n> ");
-        int addCoffee = reader.nextInt();
+        int addCoffee = Integer.parseInt(reader.nextLine());
         CoffeeMachine.coffeeBeansStock += addCoffee;
 
         System.out.print("Write how many disposable cups do you want to add:\n> ");
-        int addDisposableCups = reader.nextInt();
+        int addDisposableCups = Integer.parseInt(reader.nextLine());
         CoffeeMachine.disposableCup += addDisposableCups;
     }
     public static void take() { //Stage 4/6: Action!
@@ -100,83 +103,61 @@ public class CoffeeMachine {
                 disposableCup + " of disposable cups\n" +
                 moneyStock + " of money");
     }
-    private static void command() { //Work on project. Stage 4/6: Action!
+
+    public static void remaining() { //Stage #5: On a coffee loop
+
+    }
+    public static void exit(){ //Stage #5: On a coffee loop
+
+    }
+    private static void command() { //Stage #5: On a coffee loop
         Scanner reader = new Scanner(System.in);
-        System.out.print("Write action (buy, fill, take, remaining, exit):\n> ");
+        System.out.print("\nWrite action (buy, fill, take, remaining, exit):\n> ");
         String input = reader.next();
 
         switch (input) {
             case "buy" :
                 buy();
+                command();
                 break;
             case "fill" :
                 fill();
+                command();
                 break;
             case "take" :
                 take();
+                command();
                 break;
-            case "remaining" :
+            case "remaining" : //Stage #5: On a coffee loop
                 hello();
+                command();
                 break;
-            case "exit" :
+            case "exit" : //Stage #5: On a coffee loop
                 break;
-
+            default:
+                System.out.println("not accepted command");
         }
-
+    }
+    public static void goodBye() { //Work on project. Stage 4/6: Action!
+        System.out.println("\n\nThe coffee machine has:\n" +
+                waterStock + " of water\n" +
+                milkStock + " of milk\n" +
+                coffeeBeansStock + " of coffee beans\n" +
+                disposableCup + " of disposable cups\n" +
+                moneyStock + " of money\n");
     }
 
     public static void main(String[] args) {
-        //Stage #5: On a coffee loop
+        //Stage 4/6: Action!
+        //hello();
         command();
-
+        //goodBye();
     }
 }
-
-// Exception in test #7  Probably your program run out of input (Scanner tried to read 
-// more than expected).  java.util.NoSuchElementException at 
-// java.base/java.util.Scanner.throwFor(Scanner.java:937) at 
-// java.base/java.util.Scanner.next(Scanner.java:1478) at 
-// machine.CoffeeMachine.command(CoffeeMachine.java:144) at 
-// machine.CoffeeMachine.main(CoffeeMachine.java:151)  Please find below the output...
-//Start test 7
-//Write action (buy, fill, take, remaining, exit):
-//> > remaining
-//
-//The coffee machine has:
-//400 of water
-//540 of milk
-//120 of coffee beans
-//9 of disposable cups
-//550 of money
-//
-//Write action (buy, fill, take, remaining, exit):
-//> > buy
-//
-//What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:
-//> > back
-//Write action (buy, fill, take, remaining, exit):
-//> > remaining
-//
-//The coffee machine has:
-//400 of water
-//540 of milk
-//120 of coffee beans
-//9 of disposable cups
-//550 of money
-//
-//Write action (buy, fill, take, remaining, exit):
-//> > exit
-//
-//Write action (buy, fill, take, remaining, exit):
-//>
-
-//Wrong answer in test #7
-// There should be two lines with "milk", found: 3  Please find below the 
-// output of your program during this failed test. Note that the '>' character indicates the 
-// beginning of the input line.  ---  Write action (buy, fill, take, remaining, exit):
-// > > remaining
-// The coffee machine has: 400 of water 540 of milk 120 of coffee beans 9 of disposable cup...
-
+//Stage #5: On a coffee loop
+// Exception in test #7  Probably you have nextInt() (or similar Scanner method) 
+// followed by nextLine() - in this situation nextLine() often gives an empty 
+// string and another one nextLine() call gives correct string....
  /*
  //stage 3/6 runner
 
