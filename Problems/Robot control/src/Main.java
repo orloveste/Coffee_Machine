@@ -1,8 +1,6 @@
 class Move {
     public static void moveRobot(Robot robot, int toX, int toY) {
-        robot.getDirection(); // your implementation here
-        robot.getX();
-        robot.getY();
+        robot.stepForward(); // your implementation here
     }
 }
 

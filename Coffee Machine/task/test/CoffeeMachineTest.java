@@ -157,7 +157,7 @@ public class CoffeeMachineTest extends StageTest<TestClue> {
         String[] lines = reply.split("\\n");
 
         if (lines.length <= 1) {
-            return CheckResult.wrong("");
+            return CheckResult.wrong("Looks like you didn't print anything!");
         }
 
         int water_ = clue.water;

@@ -163,7 +163,7 @@ files:
             String[] lines = reply.split("\\n");
 
             if (lines.length <= 1) {
-                return CheckResult.wrong("");
+                return CheckResult.wrong("Looks like you didn't print anything!");
             }
 
             int water_ = clue.water;
@@ -273,4 +273,4 @@ files:
   learner_created: false
 feedback_link: https://hyperskill.org/projects/33/stages/180/implement
 status: Unchecked
-record: -1
+record: 5

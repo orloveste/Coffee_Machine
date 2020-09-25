@@ -163,7 +163,7 @@ files:
             String[] lines = reply.split("\\n");
 
             if (lines.length <= 1) {
-                return CheckResult.wrong("");
+                return CheckResult.wrong("Looks like you didn't print anything!");
             }
 
             int water_ = clue.water;
@@ -425,6 +425,42 @@ files:
                         (minimumAmountOfCoffee - amountOfCoffee) + " more than that)");
             }*/
   learner_created: true
+- name: src/machine/DayOfWeek.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/33/stages/179/implement
 status: Failed
+feedback:
+  message: "Exception in test #1\n\nProbably your program run out of input (Scanner\
+    \ tried to read more than expected).\n\njava.util.NoSuchElementException\r\n\t\
+    at java.base/java.util.Scanner.throwFor(Scanner.java:937)\r\n\tat java.base/java.util.Scanner.next(Scanner.java:1478)\r\
+    \n\tat machine.CoffeeMachine.command(CoffeeMachine.java:114)\r\n\tat machine.CoffeeMachine.command(CoffeeMachine.java:131)\r\
+    \n\tat machine.CoffeeMachine.command(CoffeeMachine.java:127)\r\n\tat machine.CoffeeMachine.command(CoffeeMachine.java:119)\r\
+    \n\tat machine.CoffeeMachine.command(CoffeeMachine.java:123)\r\n\tat machine.CoffeeMachine.command(CoffeeMachine.java:119)\r\
+    \n\tat machine.CoffeeMachine.command(CoffeeMachine.java:119)\r\n\tat machine.CoffeeMachine.command(CoffeeMachine.java:131)\r\
+    \n\tat machine.CoffeeMachine.main(CoffeeMachine.java:152)\n\nPlease find below\
+    \ the output of your program during this failed test.\nNote that the &#39;&gt;&#39;\
+    \ character indicates the beginning of the input line.\n\n---\n\n\nWrite action\
+    \ (buy, fill, take, remaining, exit):\n&gt; &gt; remaining\n\nThe coffee machine\
+    \ has:\n400 of water\n540 of milk\n120 of coffee beans\n9 of disposable cups\n\
+    $550 of money\n\nWrite action (buy, fill, take, remaining, exit):\n&gt; &gt; buy\n\
+    \nWhat do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to\
+    \ main menu:\n&gt; &gt; 2\nI have enough resources, making you a coffee!\n\nWrite\
+    \ action (buy, fill, take, remaining, exit):\n&gt; &gt; buy\n\nWhat do you want\
+    \ to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:\n&gt;\
+    \ &gt; 2\nSorry, not enough water!\n\nWrite action (buy, fill, take, remaining,\
+    \ exit):\n&gt; &gt; fill\n\nWrite how many ml of water do you want to add:\n&gt;\
+    \ &gt; 1000\nWrite how many ml of milk do you want to add:\n&gt; &gt; 0\nWrite\
+    \ how many grams of coffee beans do you want to add:\n&gt; &gt; 0\nWrite how many\
+    \ disposable cups do you want to add:\n&gt; &gt; 0\n\nWrite action (buy, fill,\
+    \ take, remaining, exit):\n&gt; &gt; buy\n\nWhat do you want to buy? 1 - espresso,\
+    \ 2 - latte, 3 - cappuccino, back - to main menu:\n&gt; &gt; 2\nI have enough\
+    \ resources, making you a coffee!\n\nWrite action (buy, fill, take, remaining,\
+    \ exit):\n&gt; &gt; take\nI gave you $564\n\nWrite action (buy, fill, take, remaining,\
+    \ exit):\n&gt; &gt; remaining\n\nThe coffee machine has:\n700 of water\n390 of\
+    \ milk\n80 of coffee beans\n7 of disposable cups\n$0 of money\n\nWrite action\
+    \ (buy, fill, take, remaining, exit):\n&gt; &gt; exit\n\nThe coffee machine has:\n\
+    700 of water\n390 of milk\n80 of coffee beans\n7 of disposable cups\n$0 of money\n\
+    \nWrite action (buy, fill, take, remaining, exit):\n&gt;"
+  time: Mon, 10 Aug 2020 13:20:43 UTC
 record: 5
