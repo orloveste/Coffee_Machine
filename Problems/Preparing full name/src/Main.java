@@ -4,6 +4,13 @@ public class Main {
 
     public static String prepareFullName(String firstName, String lastName) {
         // write your code here
+        if (firstName == null) {
+            return lastName;
+        } else if (lastName == null) {
+            return firstName;
+        } else {
+            return firstName + " " + lastName;
+        }
     }
 
     /* Do not change code below */
